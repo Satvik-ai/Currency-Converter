@@ -22,7 +22,7 @@ def get_exchange_rates(src):
     url = f"https://v6.exchangerate-api.com/v6/a3491705d8ce274e7d484ef3/latest/{src}"
     data = requests.get(url).json()
     if data["result"] == "success":
-        exchange_rates = data["rates"] # get the exchange rates
+        exchange_rates = data["conversion_rates"] # get the exchange rates
 
     return exchange_rates
 
