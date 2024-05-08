@@ -1,7 +1,6 @@
 # importing libraries
 import streamlit as st
 import requests
-from dateutil.parser import parse
 
 # Using ExchangeRate API :- https://www.exchangerate-api.com/
 
@@ -23,20 +22,18 @@ def get_exchange_rates(from_curr):
     url = f"https://v6.exchangerate-api.com/v6/a3491705d8ce274e7d484ef3/latest{from_curr}"
     data = requests.get(url).json()
     if data["result"] == "success":
-        last_updated_datetime = parse(data["time_last_update_utc"]) # get the last updated datetime
         exchange_rates = data["rates"] # get the exchange rates
 
-    return last_updated_datetime, exchange_rates
+    return exchange_rates
 
 # function to convert the currency
 def convert_currency(from_curr, to_curr, amount):
     # get the exchange rates
-    last_updated_datetime, exchange_rates = get_exchange_rates(from_curr)
+    exchange_rates = get_exchange_rates(from_curr)
     # convert by simply getting the target currency exchange rate and multiply by the amount
-    return last_updated_datetime, exchange_rates[to_curr] * amount
+    return exchange_rates[to_curr] * amount
 
-last_updated_datetime, exchange_rate = convert_currency(from_curr, to_curr, amount)
+exchange_rate = convert_currency(from_curr, to_curr, amount)
 
 # showing the results
-st.markdown(f'### "Last updated datetime:", {last_updated_datetime}')
 st.markdown(f'## {amount} {from_curr} = {exchange_rate} {to_curr}')
