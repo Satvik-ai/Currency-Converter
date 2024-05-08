@@ -39,4 +39,4 @@ last_updated_datetime, exchange_rate = convert_currency(from_curr, to_curr, amou
 
 # showing the results
 st.markdown(f'### "Last updated datetime:", {last_updated_datetime}')
-st.markdown(f'{amount} {from_curr} = {exchange_rate} {to_curr}')
+st.markdown(f'## {amount} {from_curr} = {exchange_rate} {to_curr}')
