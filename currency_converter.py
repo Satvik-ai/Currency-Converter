@@ -17,9 +17,9 @@ with col3:
 
 
 # function to get the exchange rates
-def get_exchange_rates(from_curr):
+def get_exchange_rates(src):
     # request the ExchangeRate API and convert the response to Python dict using .json()
-    url = f"https://v6.exchangerate-api.com/v6/a3491705d8ce274e7d484ef3/latest{from_curr}"
+    url = f"https://v6.exchangerate-api.com/v6/a3491705d8ce274e7d484ef3/latest{src}"
     data = requests.get(url).json()
     if data["result"] == "success":
         exchange_rates = data["rates"] # get the exchange rates
@@ -27,11 +27,11 @@ def get_exchange_rates(from_curr):
     return exchange_rates
 
 # function to convert the currency
-def convert_currency(from_curr, to_curr, amount):
+def convert_currency(src, dst, amt):
     # get the exchange rates
-    exchange_rates = get_exchange_rates(from_curr)
+    exchange_rates = get_exchange_rates(src)
     # convert by simply getting the target currency exchange rate and multiply by the amount
-    return exchange_rates[to_curr] * amount
+    return exchange_rates[dst] * amt
 
 exchange_rate = convert_currency(from_curr, to_curr, amount)
 
