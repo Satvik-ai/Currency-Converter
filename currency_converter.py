@@ -5,6 +5,7 @@ import requests
 # Using ExchangeRate API :- https://www.exchangerate-api.com/
 
 st.title('Currency Converter')
+st.caption('It allows you to quickly convert from one currency to another. Total 161 currencies are supported.')
 
 # getting input from user
 col1, col2, col3= st.columns([1,1,1])
