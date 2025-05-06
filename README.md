@@ -1,9 +1,21 @@
-## Currency Converter
+# 💱 Currency Converter
 
-It allows you to quickly convert from one currency to another. Total 161 currencies are supported.
+This is a simple and efficient web application that allows users to quickly convert between 161 global currencies in real-time.
 
-[ExchangeRate API](https://www.exchangerate-api.com/) has been used to get the exchange rates.
+🔗 **Live App**: [Click Here to Try It](https://satvik-currency-converter-3isbfxrmgz2mfdrsn9keoi.streamlit.app/)
 
-App has been built using the [Streamlit](https://streamlit.io/).
+---
 
-Link :- [Click Here](https://satvik-currency-converter-3isbfxrmgz2mfdrsn9keoi.streamlit.app/)
+## ✨ Features
+
+- 🌍 Supports 161 world currencies
+- 🔄 Real-time exchange rates
+- 🔎 Clean and minimal UI
+- 🚀 Fast and lightweight
+
+---
+
+## 🛠 Built With
+
+- [Streamlit](https://streamlit.io/) — for rapid web app development
+- [ExchangeRate API](https://www.exchangerate-api.com/) — for real-time currency rates
